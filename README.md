@@ -7,4 +7,6 @@ Augenstein.
 Diese Sammlung ist gedacht als Nachschlagehilfe während dem Unterricht, nicht
 als Zusammenfassung für die Prüfung.
 
+PDF-Version befindet sich auf https://studentenportal.ch/dokumente/an2i/.
+
 Ergänzungen sind willkommen.
