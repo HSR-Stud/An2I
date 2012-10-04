@@ -1,0 +1,201 @@
+\section{Integralrechnung}
+
+
+\subsection{Definition des Integrals}
+
+Die Definition des Integrals lautet
+$$\int\limits_a^b f = \lim_{n \mapsto \infty}\left(\sum_{i=1}^n f(x_i) \cdot
+    \Delta x\right)$$
+mit
+$$\Delta x = \frac{b-a}{n}$$
+und
+$$x_i = a + i \cdot \Delta x$$
+
+
+\subsection{Summenformeln}
+
+$$\sum_{i=1}^n i = \frac{n(n+1)}{2}$$
+$$\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$$
+$$\sum_{i=1}^n i^3 = \left(\frac{n(n+1)}{2}\right)^2$$
+
+
+\subsection{Graphische Interpretation von Integralen}
+
+Wir betrachten das Integral
+$$\int\limits_a^b f$$
+Wir nennen die Fläche, welche horizontal durch zwei Abszissen und vertikal
+durch die Abszissenachse und den Funktionsgraphen begrenzt sind als
+\emph{Fläche unter dem Funktionsgraphen}. Es sind nun zwei Fälle zu
+unterscheiden:
+
+\begin{itemize}
+    \item Wenn $a < b$ ist:\\
+    Dann sind Flächen unter Funktionsgraphen mit positiver Ordinate positiv und
+    solche mit negativen Ordinaten negativ zu zählen.
+    \item Wenn $a > b$ ist:\\
+    Dann sind Flächen unter Funktionsgraphen mit positiver Ordinate negativ und
+    solche mit negativen Ordinaten positiv zu zählen.
+\end{itemize}
+
+
+\subsection{Vorzeichenregeln und Additivität}
+
+Falls die beteiligten Integrale existieren, gilt
+\begin{itemize}
+    \item Vertauschen der Integralgrenzen ändert das Vorzeichen des Integrals
+    $$\int\limits_a^b f = - \int\limits_b^a f$$
+    \item Aneinanderstossende Integrale können zusammengefasst werden.
+    $$\int\limits_a^b f + \int\limits_b^c f = \int\limits_a^c f$$
+\end{itemize}
+
+
+\subsection{Numerische Berechnung von Integralen}
+
+
+\subsubsection{Trapezregel}
+
+Die allgemeine Formel für die Trapezregel lautet:
+
+$$\int\limits_a^b f = \left[\frac{f(a) + f(b)}{2} + \sum_{i=1}^{n-1}
+    f(x_i)\right] \Delta x$$
+mit
+$$\Delta x = \frac{b-a}{n} \textrm{ und } x_i = a + i \cdot \Delta x$$
+
+
+\subsubsection{Fassregel}
+
+Bei der Fassregel wird die zu integrierende Funktion $\int_a^b$ mit einer
+quadratischen Funktion, die durch die Punkte $a$, $b$ und $\frac{b-a}{2}$ geht,
+approximiert.
+$$\int\limits_a^b f \approx \int\limits_a^b q = \frac{y_a + 4y_m
+    + y_b}{3} \Delta x$$
+wobei
+$$y_a = f(a) \textrm{, } y_m = f\left(\frac{a+b}{2}\right) \textrm{, } y_b
+    = f(b) \textrm{, } \Delta x = \frac{b-a}{2}$$
+
+
+\subsubsection{Simpson-Regel}
+
+Sei $f$ eine auf $[a;b]$ viermal differenzierbare Funktion und $n$ eine gerade
+Zahl. Ferner sei
+$$x_i = a + i \cdot \Delta x \textrm{ mit } \Delta x = \frac{b-a}{n}
+    \textrm{ und } y_i = f(x_i)$$
+Dann ist
+$$S_n = \frac{\Delta x}{3}(y_0 + 4y_1 + 2y_2 + 4y_3 + 2y_4 + ... + 4y_{n-1}
+    + y_n)$$
+$$= \frac{\Delta x}{3}\left(y_0 + y_n + 4 \sum_{k=1}^{n/2} y_{2k-1} + 2
+    \sum_{k=1}^{n/2-1} y_{2k}\right)$$
+eine Schätzung für das Integral $\int\limits_a^b f$, wobei der Fehler
+$$E_n = \left(\int\limits_a^b f\right) - S_n = \frac{b-a}{180}\Delta x^4
+    f^{(4)}(\xi) = \frac{(b-a)^5}{180n^4} f^{(4)}(\xi)$$
+$$\textrm{für ein } \xi \in [a;b]$$
+beträgt.
+
+
+\subsection{Integralfunktion}
+
+Gegeben sei eine auf dem Intervall $[a;b]$ integrierbare Funktion $f$. Dann
+heisst jede Funktion der Form
+$$x \mapsto \int\limits_c^x f$$
+für eine Konstante $c \in [a;b]$ eine \emph{Integralfunktion} von $f$.
+
+
+\subsection{Zusammenhang verschiedener Integralfunktionen}
+
+Verschiedene Integralfunktionen derselben Funktion unterscheiden sich nur durch
+eine Konstante. Wenn also
+$$\varphi_c := x \mapsto \int\limits_c^x f \textrm{ und } \varphi_d := x
+    \mapsto \int\limits_d^x f$$
+dann gilt
+$$\varphi_d = \varphi_c + k \textrm{ wobei } k \textrm{ konstant}$$
+
+
+\subsection{Hauptsatz der Infinitesimalrechnung}
+
+Die Ableitungsfunktion einer Integralfunktion einer stetigen Funktion ist gleich
+der integrierten Funktion.
+$$\left(x \mapsto \int\limits_a^x f\right)' = f$$
+
+
+\subsection{Stammfunktion}
+
+Sei $f$ eine reelle Funktion. Wenn es eine Funktion $F$ gibt, so dass $f$ ihre
+Ableitungsfunktion ist, also
+$$F' = f$$
+gilt, dann heisst $F$ eine \emph{Stammfunktion} von $f$.
+
+
+\subsection{Unbestimmtes Integral}
+
+Die Menge aller Stammfunktionen einer Funktion $f$ nennt man ihr
+\emph{unbestimmtes Integral} und bezeichnet es mit
+$$\int f \textrm{ (ohne Grenzen)}$$
+Auch von Termen gibt es das unbestimmte Integral. Wenn etwa $T$ ein Term und
+$x$ eine Variable ist, schreibt man
+$$\int Tdx$$
+
+
+\subsection{Integralfunktion - Stammfunktion}
+
+Jede Integralfunktion einer stetigen Funktion ist eine Stammfunktion von ihr.
+
+
+\subsection{Berechnung von Integralen mit Hilfe von Stammfunktionen}
+
+Sei $f$ eine auf den Intervall $[a;b]$ \textbf{stetige} Funktion und $F$ eine
+Stammfunktion von ihr. Dann gilt
+$$\int\limits_a^b f = F\Big |_a^b = F(b) - F(a)$$
+
+
+\subsection{Integrationsregeln}
+
+
+\subsubsection{Linearitätsregel}
+
+Seien $f$ und $g$ Funktionen und $c$ eine Konstante. Dann gelten folgende
+Linearitätsregeln:
+$$\int (f+g) = \int f + \int g$$
+$$\int cf = c \int f$$
+
+
+\subsubsection{Integrale von Verkettungen mit linearen Funktionen}
+
+Sei $f$ eine integrierbare Funktion und $F$ eine Stammfunktion von ihr. Dann
+gilt
+$$\int f(ax+b)dx = \frac{F(ax+b)}{a} + c$$
+wobei $c$ eine beliebige Konstante ist.
+
+
+\subsubsection{Produktregel}
+
+$$\int\limits_a^b f(x) \cdot g'(x) dx = (f(x) \cdot g(x))\Big |_a^b
+    - \int f'(x) \cdot g(x) dx$$
+
+
+\subsubsection{Produkt mit der eigenen Ableitung} 
+
+Eine Stammfunktion des Produktes einer Funktion mit ihrer eigenen
+Ableitungsfunktion ist gleich dem halben Quadrat dieser Funktion.
+
+Beispiel:
+$$\int \sin(x) \cos(x) dx = \frac{\sin(x)^2}{2} + c$$
+
+
+\subsubsection{Quotientenregel}
+
+$$\int\limits_a^b \frac{f'(x)}{f(x)} dx = \ln(|f(x)|)\Big |_a^b$$
+
+
+\subsubsection{Substitutionsregel}
+
+$$\int\limits_a^b f(g(x)) \cdot g'(x) dx = \int\limits_{g(a)}^{g(b)} f(u) du$$
+
+
+\subsection{Fläche zwischen Funktionsgraphen} 
+
+$f$ und $g$ seien Funktionen, die im Intervall $[a;b]$ stetig sind. Dann ist
+die Fläche, welche oben und unten durch die Graphen der Funktionen $f$ und $g$,
+sowie links und rechts durch die Abszissen $a$ respektive $b$ begrenzt wird,
+durch
+$$\int\limits_a^b |f(x) - g(x)| dx$$
+gegeben.
