@@ -31,3 +31,27 @@
 % Additional math operators
 
 \DeclareMathOperator{\lb}{lb} % Binary logarithm
+
+% Creative Commons icons
+
+\graphicspath{{texutils/ccicons/}}
+\input{texutils/ccicons.tex}
+
+% License macro
+
+\gdef\ccLogos{\ccLogo\;\ccShareAlike}
+\newcommand{\license}[1]{\renewcommand{\ccLogos}{#1}}
+
+% Settings and macros for titlepage
+
+\input{texutils/authorsfromfile.tex} % Load authors from CONTRIBUTORS.txt
+\input{revision.tex} % Show last git change date
+
+\newcommand{\moduleName}[1]{\gdef\modname{#1}}
+\newcommand{\moduleAbbr}[1]{\gdef\modabbr{#1}}
+\gdef\modurl{https://github.com/HSR-Stud/\modabbr/}
+
+\title{\modabbr\ Zusammenfassung}
+\subject{\modname}
+\authorsfromfile{CONTRIBUTORS.txt}{\url{\modurl}}
+\date{Stand: \revisiondate}
