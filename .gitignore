@@ -19,8 +19,11 @@
 *.maf
 *.mtc
 *.mtc1
+*.fls
 *.out
 *.pdf
+*.swp
 *.synctex*
 *.synctex.gz
+*.fdb_latexmk
 revision.tex
